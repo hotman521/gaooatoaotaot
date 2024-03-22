@@ -4610,7 +4610,7 @@ function library:Load(options)
     end
 
     self.title_bounds = self.holder:Create("Text", {
-        Text = options.title .. " |  ",
+        Text = options.title .. " |    ",
         Font = self.font,
         Size = self.font_size,
         Position = newUDim2(0, 6, 0, 4),
