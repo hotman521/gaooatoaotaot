@@ -3851,8 +3851,7 @@ function library:Playerlist(max_players)
             player_data[plr].name = plr.Name
 
             spawn(function()
-                local thumbnail_data = services.HttpService:JSONDecode(request{Url = ("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=%s&size=60x60&format=Png"):format(plr.UserId), Method = "GET"}.Body)
-                local image = request{Url = thumbnail_data.data[1].imageUrl, Method = "GET"}.Body
+                local image = game:HttpGet(("https://www.roblox.com/headshot-thumbnail/image?userId=%s&width=100&height=100&format=png"):format(plr.UserId))
 
                 player_data[plr].image = image
                 
